@@ -11,11 +11,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/customers' do
-    Customer.all.to_json
+    Customer.all.to_json(include: :projects)
   end
 
   get '/customers/:id' do
-    Customer.find(params[:id]).to_json    
+    Customer.find(params[:id]).to_json(include: :projects)   
   end
 
   get '/customers/:id/projects' do
@@ -64,5 +64,10 @@ class ApplicationController < Sinatra::Base
     project.to_json
   end
 
+  delete '/customers/:id' do
+    customer = Customer.find(params[:id])
+    customer.destroy
+    customer.to_json
+  end
 
 end

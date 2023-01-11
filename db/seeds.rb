@@ -4,9 +4,13 @@ Item.destroy_all
 Project.destroy_all
 Customer.destroy_all
 
-Item.create(item_name: "Ceiling Fan Small", item_cost: 100)
-Item.create(item_name: "Ceiling Fan Large", item_cost: 300)
-Item.create(item_name: "Ceiling Fan Owner Bought", item_cost: 0)
+Item.create(item_name: "Ceiling Fan Small", item_cost: 100, project_id: 0, project_category: "Ceiling Fan")
+Item.create(item_name: "Ceiling Fan Large", item_cost: 300, project_id: 0, project_category: "Ceiling Fan")
+Item.create(item_name: "Ceiling Fan Owner Bought", item_cost: 0, project_id: 0, project_category: "Ceiling Fan")
+Item.create(item_name: "Ceiling Fan Small", item_cost: 100, project_id: 0, project_category: "Ceiling Fan2")
+Item.create(item_name: "Ceiling Fan Large", item_cost: 300, project_id: 0, project_category: "Ceiling Fan2")
+Item.create(item_name: "Ceiling Fan Owner Bought", item_cost: 0, project_id: 0, project_category: "Ceiling Fan2")
+
 Project.create(project_name: "Ceiling Fan", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 1)
 Project.create(project_name: "Ceiling Fan2", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 1)
 Project.create(project_name: "no id Ceiling Fan", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
