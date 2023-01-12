@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/customers' do
-    Customer.all.to_json(include: :projects)
+    Customer.all.to_json(include: {projects: {include: :items}})
   end
 
   get '/customers/:id' do
