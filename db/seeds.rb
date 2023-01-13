@@ -1,4 +1,4 @@
-puts "🌱 Seeding spices..."
+puts "🌱  spices..."
 
 Item.destroy_all
 Project.destroy_all
@@ -13,9 +13,9 @@ Item.create(item_name: "Ceiling Fan Owner Bought", item_cost: 0, project_id: 0, 
 
 Project.create(project_name: "Ceiling Fan", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 2)
 Project.create(project_name: "Ceiling Fan2", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 2)
-Project.create(project_name: "no id Ceiling Fan", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
-Project.create(project_name: "no id Ceiling Fan 2", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
-Project.create(project_name: "no id Ceiling Fan 3", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
+Project.create(project_name: "Ceiling Fan", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
+Project.create(project_name: "Ceiling Fan2", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
+Project.create(project_name: "Ceiling Fan3", project_description: "Hangs Ceiling Fan", labor_cost: 200, customer_id: 0)
 
 Customer.create([
     {

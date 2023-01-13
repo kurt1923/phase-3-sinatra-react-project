@@ -10,6 +10,10 @@ class ApplicationController < Sinatra::Base
     Project.all.to_json
   end
 
+  get '/items' do
+    Item.all.to_json
+  end
+
   get '/customers' do
     Customer.all.to_json(include: {projects: {include: :items}})
   end
@@ -24,7 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/projects/:id' do
-    Project.find(params[:id]).to_json
+    Project.find(params[:id]).to_json(include: :items)
   end
 
   post '/customers' do
