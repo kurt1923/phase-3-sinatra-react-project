@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/projects' do
-    Project.all.to_json
+    Project.all.to_json(include: :items)
   end
 
   get '/items' do
@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
 
   get '/customers/:id/projects' do
     customer = Customer.find(params[:id])
-    customer.projects.to_json
+    customer.projects.to_json(include: :items)
   end
 
   get '/projects/:id' do
@@ -42,12 +42,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/projects' do
-    project = Project.create(
-      project_name: params[:project_name],
-      project_description: params[:project_description],
-      labor_cost: params[:labor_cost],
-      customer_id: params[:customer_id]
-    )
+    project = Project.create(params)
+    project.to_json(include: :items)
+  end
+
+  post '/items' do
+    project = Item.create(params)
     project.to_json
   end
 
