@@ -12,7 +12,7 @@ Sinatra
 Instructions
 Run bundle install, then bundle exec rake server!
 Github
-
+https://github.com/kurt1923/phase-3-sinatra-react-project.git
 ** Client Github**
 
 Demo Video
